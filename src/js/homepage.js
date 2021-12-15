@@ -2,7 +2,7 @@ function App() {
     return (
       <html>
         <div className="App">
-          <h1>React Boilerplate Works!!! 🎆</h1>
+          <h1>Evergreen Arrangements 💐</h1>
         </div>
       </html>
     );
