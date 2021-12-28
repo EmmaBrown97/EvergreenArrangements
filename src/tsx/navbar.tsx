@@ -13,6 +13,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import './../css/navbar.css';
+import header_flower from './../images/pink_flower.jpeg';
+import logo from './../images/logo-text-white.png';
 
 const pages = ['Home', 'Gallery', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -39,8 +41,10 @@ const ResponsiveAppBar = () => {
   return (
     <AppBar sx={{position: "static", background: "#0c463f"}} >
       <Container maxWidth="xl">
+      
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', color: 'red' } }}>
+          
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -90,9 +94,16 @@ const ResponsiveAppBar = () => {
               </Button>
             ))}
           </Box>
+          <Box sx={{width: 200, height: 70, flexGrow: 1, display: {xs: 'none', md: 'flex'} }}>
+            
+              <img src={logo}/>
+            
+            
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
+    
   );
 };
 export default ResponsiveAppBar;
