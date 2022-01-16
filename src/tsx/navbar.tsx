@@ -43,7 +43,7 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
       
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', color: 'red' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', color: 'white' } }}>
           
             <IconButton
               size="large"
@@ -80,12 +80,11 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          <Box>
-              <LocalFloristIcon/>
-          </Box>
+ 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
+              href={page}
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
