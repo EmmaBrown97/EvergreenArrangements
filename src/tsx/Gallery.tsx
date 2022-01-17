@@ -11,8 +11,11 @@ import IMAGES from './../images/index.js';
 function Gallery() {
     return  (
 
-        <Box sx={{ overflowY: 'scroll' }}>
-        <ImageList variant="masonry" cols={3} gap={20}>
+        <Container>
+
+        
+        <Box sx={{ overflowY: 'scroll'}}>
+        <ImageList variant="masonry" cols={2} gap={15}>
           {itemData.map((item) => (
               <a href={`${item.img}`}>
             <ImageListItem key={item.img}>
@@ -24,7 +27,7 @@ function Gallery() {
                 src={`${item.img}?w=248&fit=crop&auto=format`}
                 srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                 alt={item.title}
-                loading="lazy"
+                loading="eager"
               />
               
             </ImageListItem>
@@ -32,11 +35,10 @@ function Gallery() {
           ))}
         </ImageList>
       </Box>
-
+      </Container>
           
     )
 }
-
 
 const itemData = [
     {

@@ -12,7 +12,7 @@ function App() {
     return(
         <StyledEngineProvider injectFirst>
             <Router>
-                
+            
                 <NavBar/>
                 <Header/>
                 <Routes>
