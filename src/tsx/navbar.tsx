@@ -14,7 +14,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import './../css/navbar.css';
 import header_flower from './../images/pink_flower.jpeg';
-import logo from './../images/logo-text-white.png';
+import logo from './../images/circle_logo_cropped.png';
+
 
 const pages = ['Home', 'Gallery', 'Contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
