@@ -36,10 +36,10 @@ const useStyles = makeStyles((theme) => ({
       color: 'black'
   },
   appBarTransparent: {
-      backgroundColor: 'rgba(67, 129, 168,0.5)'
+      backgroundColor: 'rgba(37, 63, 64,0.6)'
   },
   appBarSolid: {
-      backgroundColor: 'rgba(67, 129, 168)'
+      backgroundColor: 'rgba(37, 63, 64)'
   }
 }));
 
@@ -68,7 +68,7 @@ const ResponsiveAppBar = () => {
   navRef.current = navBackground
   useEffect(() => {
       const handleScroll = () => {
-          const show = window.scrollY > 310
+          const show = window.scrollY > 250
           if (show) {
               setNavBackground('appBarSolid')
           } else {
