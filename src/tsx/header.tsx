@@ -1,4 +1,4 @@
-import header_flower from './../images/pink_flower.jpeg';
+import header_flower from './../images/new_header.jpg';
 
 function Header() {
     return(
