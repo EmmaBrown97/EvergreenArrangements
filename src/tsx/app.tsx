@@ -7,11 +7,16 @@ import Contact from './contact'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { StyledEngineProvider } from '@mui/material/styles';
+import evergreenTheme from './../theme'
+import { CssBaseline } from '@mui/material'
 
 
 function App() {
     return(
+        <ThemeProvider theme={evergreenTheme}>
+            <CssBaseline/>
         <StyledEngineProvider injectFirst>
+                 
             <Router>
             
                 <NavBar/>
@@ -23,7 +28,9 @@ function App() {
                 </Routes>
                 <Footer/>
             </Router>
+            
         </StyledEngineProvider>
+        </ThemeProvider>
     );
 }
 
