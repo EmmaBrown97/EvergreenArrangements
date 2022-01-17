@@ -9,12 +9,7 @@ function HomePage() {
           backgroundColor: 'white'
 
         }}>
-          <div className="App">
-            <div>
-
-            </div>
-            <h1>Evergreen Arrangements 💐</h1>
-          </div>
+     
         </Box>
         
       </html>
