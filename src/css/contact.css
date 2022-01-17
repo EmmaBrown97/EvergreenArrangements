@@ -1,0 +1,22 @@
+.container{
+    margin-top: 1%;
+    text-align: center;
+}
+.name_div{
+    margin: 1%;
+}
+.email_div{
+    margin: 1%;
+}
+.subject_div{
+    margin: 1%;
+}
+.message_div{
+    margin: 1%;
+}
+.send_div{
+    margin: 1%;
+}
+.title{
+    text-align: center;
+}
