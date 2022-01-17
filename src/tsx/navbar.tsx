@@ -14,10 +14,12 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import ContainerElement from '@mui/material/Container';
 import './../css/navbar.css';
 
 import logo from './../images/logo-text-white.png';
 import header_flower from './../images/new_header.jpg';
+import { Link } from 'react-router-dom';
 
 
 const pages = ['Home', 'Gallery', 'Contact'];
@@ -122,7 +124,10 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} 
+                component={Link}
+                to={page}
+                 onClick={handleCloseNavMenu}>
                   <Typography textAlign="center" >{page}</Typography>
                 </MenuItem>
               ))}

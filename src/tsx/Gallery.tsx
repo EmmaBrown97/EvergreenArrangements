@@ -4,25 +4,47 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import test from './../images/gallery/gallery1.jpg';
 import Masonry from 'react-masonry-css'
-import {Container} from '@material-ui/core'
+import {Container, Fade, useMediaQuery, useTheme} from '@material-ui/core'
 import IMAGES from './../images/index.js';
+import VizSensor from 'react-visibility-sensor';
+import { useState } from 'react';
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+
+function useIsWidthUp(breakpoint) {
+  const theme = useTheme();
+  return useMediaQuery(theme.breakpoints.up(breakpoint));
+}
+
+function Gallery(props) {
+
+  const isSmUp = useIsWidthUp("sm");
+  let [active, setActive] = useState(false);
 
 
-function Gallery() {
+  const getGridListCols = () => {
+
+    if (isWidthUp('sm', props.width)) {
+      return 2;
+    }
+
+    return 1;
+  }
+
     return  (
 
         <Container>
 
         
         <Box sx={{ overflowY: 'scroll'}}>
-        <ImageList variant="masonry" cols={2} gap={15}>
+        <ImageList variant="masonry" cols={isSmUp ? 2 : 1} gap={15}>
           {itemData.map((item) => (
-              <a href={`${item.img}`}>
+
+                                <a href={`${item.img}`}>
+                                  <Fade in timeout={3000}>
+
+                                  
             <ImageListItem key={item.img}>
               ]
-              
-
-              
                   <img
                 src={`${item.img}?w=248&fit=crop&auto=format`}
                 srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
@@ -31,7 +53,10 @@ function Gallery() {
               />
               
             </ImageListItem>
+            </Fade>
             </a>
+                                
+              
           ))}
         </ImageList>
       </Box>
