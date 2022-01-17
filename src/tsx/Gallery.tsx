@@ -14,14 +14,21 @@ function Gallery() {
         <Box sx={{ overflowY: 'scroll' }}>
         <ImageList variant="masonry" cols={3} gap={20}>
           {itemData.map((item) => (
+              <a href={`${item.img}`}>
             <ImageListItem key={item.img}>
-              <img
+              ]
+              
+
+              
+                  <img
                 src={`${item.img}?w=248&fit=crop&auto=format`}
                 srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
                 alt={item.title}
                 loading="lazy"
               />
+              
             </ImageListItem>
+            </a>
           ))}
         </ImageList>
       </Box>
