@@ -16,6 +16,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Container, Grid, Link, Fade, createTheme, ThemeProvider } from '@material-ui/core';
 import VizSensor from 'react-visibility-sensor';
 import Box from '@mui/material/Box';
+import EmailIcon from '@mui/icons-material/Email';
 
   
 function Footer(props) {
@@ -47,9 +48,9 @@ function Footer(props) {
                                                 href={"https://www.instagram.com/dustypineflorals/?hl=en"}
                                                 >
                                                     <InstagramIcon/>
-                                                    <Typography >
+                                                    <Typography variant="caption">
                                                     @evergreen.floral.arrangements
-                                                </Typography>
+                                                    </Typography>
                                                 </IconButton>
                                         
                                         </Box>
@@ -65,7 +66,13 @@ function Footer(props) {
                                     }}
                                 >
                                     <Fade in={active} timeout={3000}>
-                                        <Typography variant="h3" gutterBottom></Typography>
+                                        <Box color="white">
+                                            <EmailIcon color="inherit"/>
+                                            <Typography variant="caption">
+                                                evergreen.floral.arrangements@gmail.com
+                                            </Typography>
+                                        </Box>
+                                        
                                     </Fade>
                                 </VizSensor>
                             </Box>

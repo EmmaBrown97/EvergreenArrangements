@@ -21,15 +21,6 @@ function Gallery(props) {
   let [active, setActive] = useState(false);
 
 
-  const getGridListCols = () => {
-
-    if (isWidthUp('sm', props.width)) {
-      return 2;
-    }
-
-    return 1;
-  }
-
     return  (
 
         <Container>
