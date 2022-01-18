@@ -9,6 +9,7 @@ import IMAGES from './../images/index.js';
 import VizSensor from 'react-visibility-sensor';
 import { useState } from 'react';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+import Typography from '@mui/material/Typography';
 
 function useIsWidthUp(breakpoint) {
   const theme = useTheme();
@@ -25,7 +26,14 @@ function Gallery(props) {
 
         <Container>
 
-        
+        <Box sx={{
+          m: 10
+        }}>
+          <Typography variant="h3" color="primary.main" align="center" fontFamily="Monsterrat">
+              Here are some of my arrangements
+            </Typography>
+        </Box>
+          
         <Box sx={{ overflowY: 'scroll'}}>
         <ImageList variant="masonry" cols={isSmUp ? 2 : 1} gap={15}>
           {itemData.map((item) => (

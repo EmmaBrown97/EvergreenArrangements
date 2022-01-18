@@ -128,19 +128,20 @@ const ResponsiveAppBar = () => {
                 component={Link}
                 to={page}
                  onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" >{page}</Typography>
+                  <Typography textAlign="center" fontFamily='Helvetica Neue'>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
  
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex'} }}>
             {pages.map((page) => (
               <Button
+              
               href={page}
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, mx: 1, color: 'white', display: 'block' }}
+                sx={{ my: 2, mx: 1, color: 'white', display: 'block', fontFamily: 'Helvetica Neue'}}
               >
                 {page}
               </Button>

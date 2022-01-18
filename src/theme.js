@@ -1,16 +1,18 @@
 import { createTheme } from '@material-ui/core/styles';
 
 const evergreenTheme = createTheme({
-    Typography: {
-        fontFamily: ['"Montserrat"', 'Open Sans'].join(',')
+    
 
-       },
+    
     palette: {
         primary: {
             main: "#2B3E40"
         },
         secondary: {
             main: "#BF7047"
+        },
+        warning: {
+            main: "#B3BBAE"
         },
         background: {
             default: "#FBF5F3"
@@ -28,8 +30,8 @@ const evergreenTheme = createTheme({
     input: {
         color: 'red'
     },
-    spacing: 8,
-    
+    spacing: 4,
+
 })
 
 export default evergreenTheme;

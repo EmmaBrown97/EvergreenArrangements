@@ -1,14 +1,24 @@
-import { Container, Grid } from '@material-ui/core';
+import { Container, Grid, makeStyles } from '@material-ui/core';
+import { StayPrimaryLandscape } from '@material-ui/icons';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import { palette } from '@mui/system';
 import emailjs from 'emailjs-com'
-import './../css/contact.css'
 
+const useStyles = makeStyles(theme => ({
+    inputTextColor:{
+        color: "#2B3E40",
+        fontFamily: "Helvetica"
+    },
+    emailButtonColor:{
+        color: "#B3BBAE"
+    }
+  }));
+  
 function Contact() {
-
+    const classes = useStyles();
     function sendEmail(e) {
         e.preventDefault();
 
@@ -27,107 +37,127 @@ function Contact() {
             }}>
 
             
-            <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
+            <Grid container spacing={3}>
+                <Grid item xs={12} md={6}>
                     <Container maxWidth="lg">
-                        <Box>
-                            <Typography variant="h3" color="primary.main">
+                        <Box sx={{
+                            
+                        }}>
+                            <Typography variant="h3" color="primary.main" fontFamily="Monsterrat">
                                 Send Me An Email!
                             </Typography>
-                            <Typography variant="subtitle2" color="primary.main">
+                            <Typography variant="subtitle2" color="primary.main" fontFamily="Helvetica">
                                 If you have questions about pricing, date availability, or anything that I do, please send me an email!                    
                             </Typography>
                         </Box>
                     </Container>
                 </Grid>
-                <Grid item xs={12} sm={6}>     
-                        <Container maxWidth="xl">
+                <Grid item xs={12} md={6}>     
+                        
                             <form onSubmit={sendEmail}>
-                                <Grid container spacing={2}>
+                                <Grid container spacing={4}>
 
-                                <Grid item xs={12} sm={6}>
-                                    <div className="name_div">
-                                        <TextField 
-                                        fullWidth
-                                        label="First Name" 
-                                        variant="outlined" 
-                                        className="textField" 
-                                        color="secondary"
-                                        focused> 
-                                        </TextField>
+                                    <Grid item xs={12} sm={6}>
+                                        <Box className="name_div">
+                                            <TextField 
+                                            fullWidth
+                                            label="First Name" 
+                                            variant="outlined" 
+                                            className="textField" 
+                                            color="secondary"
+                                            focused
+                                            InputProps={{
+                                                className: classes.inputTextColor
+                                              }}> 
+                                            </TextField>
+                                                    
+                                        </Box>
+                                    </Grid>
+                                    <Grid item xs={12} sm={6}>
+                                        <Box className="name_div" sx={{
+                                            }}>
+                                            <TextField 
+                                            fullWidth
+                                            label="Last Name" 
+                                            variant="outlined" 
+                                            className="textField" 
+                                            color="secondary"
+                                            focused
+                                            InputProps={{
+                                                className: classes.inputTextColor
+                                              }}> 
+                                            </TextField>
+                                                    
+                                        </Box>
+                                    </Grid>
+                                    <Grid item xs={12} sm={12}>
+                                        <div className="email_div">
+                                                    <TextField 
+                                                    fullWidth
+                                                        label="Email Address" 
+                                                        variant="outlined" 
+                                                        className="textField" 
+                                                        color="secondary"
+                                                        focused
+                                                        InputProps={{
+                                                            className: classes.inputTextColor
+                                                          }}> 
+                                                        </TextField>
+                                                </div>
+                                    </Grid>
+                                    <Grid item xs={12} sm={12}>
+                                    <div className="subject_div">
+                                                <TextField 
+                                                fullWidth
+                                                    label="Subject" 
+                                                    variant="outlined" 
+                                                    className="textField" 
+                                                    color="secondary"
+                                                    focused
+                                                    InputProps={{
+                                                        className: classes.inputTextColor
+                                                      }}> 
+                                                    </TextField>
+                                            </div>
+                                    </Grid>
+                                    <Grid item xs={12} sm={12}>
+                                        <div className="message_div">
+                                                <TextField 
+                                                fullWidth
+                                                multiline={true}
+                                                    label="Message" 
+                                                    id="outlined-basic" 
+                                                    variant="outlined" 
+                                                    className="textField" 
+                                                    color="secondary"
+                                                    rows={5}
+                                                    maxRows={10}
+                                                    focused
+                                                    InputProps={{
+                                                        className: classes.inputTextColor
+                                                      }}> 
+                                                    </TextField>
+                                            </div>
+                                    </Grid>
+                                    <Grid item xs={12} sm={12}>
+                                        <div className="send_div">
+                                            <Button variant="contained" size="large" color="primary"
+                                            sx={{
                                                 
-                                    </div>
-                                </Grid>
-                                <Grid item xs={12} sm={6}>
-                                    <div className="name_div">
-                                        <TextField 
-                                        fullWidth
-                                        label="Last Name" 
-                                        variant="outlined" 
-                                        className="textField" 
-                                        color="secondary"
-                                        focused> 
-                                        </TextField>
-                                                
-                                    </div>
-                                </Grid>
-                                <Grid item xs={12} sm={12}>
-                                <div className="email_div">
-                                            <TextField 
-                                            fullWidth
-                                                label="Email Address" 
-                                                variant="outlined" 
-                                                className="textField" 
-                                                color="secondary"
-                                                focused> 
-                                                </TextField>
+                                                fontFamily: 'Helvetica Neue'
+                                            }}>
+                                                Send Email
+                                            </Button>
+                                                    
                                         </div>
+                                    </Grid>
                                 </Grid>
-                                <Grid item xs={12} sm={12}>
-                                <div className="subject_div">
-                                            <TextField 
-                                            fullWidth
-                                                label="Subject" 
-                                                variant="outlined" 
-                                                className="textField" 
-                                                color="secondary"
-                                                focused> 
-                                                </TextField>
-                                        </div>
-                                </Grid>
-                                <Grid item xs={12} sm={12}>
-                                    <div className="message_div">
-                                            <TextField 
-                                            fullWidth
-                                            multiline={true}
-                                                label="Message" 
-                                                id="outlined-basic" 
-                                                variant="outlined" 
-                                                className="textField" 
-                                                color="secondary"
-                                                rows={5}
-                                                maxRows={10}
-                                                focused> 
-                                                </TextField>
-                                        </div>
-                                </Grid>
-                                <Grid item xs={12} sm={12}>
-                                <div className="send_div">
-                                    <Button variant="contained" size="large" color="primary">
-                                        Send Email
-                                    </Button>
-                                            
-                                        </div>
-                                </Grid>
-                                </Grid>
-                            </form>
-                            
-                        </Container>
+                            </form>                         
+                        
+                    </Grid>
                 </Grid>
-            </Grid>
             </Box>
-        </Container>
-        
+        </Container>     
     )
 }
 

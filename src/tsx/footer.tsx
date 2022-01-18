@@ -13,76 +13,107 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Container, Grid, Link, Fade, createTheme, ThemeProvider } from '@material-ui/core';
+import { Container, Grid, Link, Fade, createTheme, ThemeProvider, useTheme } from '@material-ui/core';
 import VizSensor from 'react-visibility-sensor';
 import Box from '@mui/material/Box';
 import EmailIcon from '@mui/icons-material/Email';
+import Stack from '@mui/material/Stack';
+import ListItem from '@mui/material/ListItem';
+import LogoImage from './../images/circle_logo_cropped.png'
+import useMediaQuery from '@mui/material/useMediaQuery';
 
-  
+
+function useIsWidthUp(breakpoint) {
+    const theme = useTheme();
+    return useMediaQuery(theme.breakpoints.up(breakpoint));
+  }
+
 function Footer(props) {
 
+    const isSmUp = useIsWidthUp("sm");
     let [active, setActive] = useState(false);
     return(
         
         <footer>
             <Box 
-            px={{xs: 3, sm: 10}}
-            py={{xs: 5, sm: 10}}
+            px={{xs: 1, sm: 4}}
+            py={{xs: 1, sm: 6}}
+            
             bgcolor="primary.main">
-                <Container maxWidth="lg">
-                    <Grid container spacing={5}>
-                        <Grid item xs={12} sm={4}>
+                
+                    <Grid container spacing={3}>
+                        <Grid item xs={12} sm={6}>
                             <Box color="white">
-                                <VizSensor
+                                <Stack spacing={0}>
+                                    <ListItem>
+                                    <VizSensor
                                     onChange={(isVisible) => {
                                         setActive(isVisible);
                                     }}
                                 >
                                     <Fade in={active} timeout={2000}>
                                         <Box sx={{
-                                            fontFamily: 'Arial'
+                                            fontFamily: 'Arial',
+                                            
+                                        
                                         }}>
                                             <IconButton
-                                                size="large"
+                                                size="small"
                                                 color="inherit"
                                                 href={"https://www.instagram.com/dustypineflorals/?hl=en"}
                                                 >
                                                     <InstagramIcon/>
-                                                    <Typography variant="caption">
+                                                    <Typography variant="caption" fontFamily="Helvetica Neue">
                                                     @evergreen.floral.arrangements
                                                     </Typography>
                                                 </IconButton>
                                         
                                         </Box>
                                     </Fade>
-                                </VizSensor>                            
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <Box>
-                                <VizSensor
+                                </VizSensor>    
+                                    </ListItem>
+                                    <ListItem>
+                                    <VizSensor
                                     onChange={(isVisible) => {
                                         setActive(isVisible);
                                     }}
                                 >
                                     <Fade in={active} timeout={3000}>
-                                        <Box color="white">
-                                            <EmailIcon color="inherit"/>
-                                            <Typography variant="caption">
-                                                evergreen.floral.arrangements@gmail.com
-                                            </Typography>
+                                        <Box sx = {{
+                                            color: "white",
+                                        
+                                        }}>
+                                            <IconButton
+                                                size="small"
+                                                color="inherit"
+                                                
+                                                href={"/Contact"}
+                                                >
+                                                    <EmailIcon color="inherit"/>
+                                                <Typography variant="caption" fontFamily="Helvetica Neue">
+                                                    evergreen.floral.arrangements@gmail.com
+                                                </Typography>
+                                                </IconButton>
+                                            
                                         </Box>
                                         
                                     </Fade>
                                 </VizSensor>
+                                    </ListItem>
+                                </Stack>
+                                                        
                             </Box>
                         </Grid>
-                        <Grid item xs={12} sm={4}>
+                        <Grid item xs={12} sm={6} alignItems="flex-end">
+                            <Stack direction="row" justifyContent={isSmUp ? "end" : "center"}>
+                            <img src={LogoImage} width="100" height="100" ></img>
+                            </Stack>
+                                
                             
-
                         </Grid>
+                      
                     </Grid>
-                </Container>
+                
             </Box>
         </footer>
        
