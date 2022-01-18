@@ -9,26 +9,25 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { StyledEngineProvider } from '@mui/material/styles';
 import evergreenTheme from './../theme'
 import { CssBaseline } from '@mui/material'
+import { Fragment } from 'react'
+import {BrowserRouter} from 'react-router-dom'
 
 
 function App() {
     return(
         <ThemeProvider theme={evergreenTheme}>
-            <CssBaseline/>
+        <CssBaseline/>
         <StyledEngineProvider injectFirst>
-                 
-            <Router>
             
-                <NavBar/>
-                <Header/>
+            <Router>
+            <NavBar/>
                 <Routes>
-                    <Route path="/Home" element={<HomePage/>}/>
-                    <Route path="/Gallery" element={<Gallery/>}/>
-                    <Route path="/Contact" element={<Contact/>}/>
+                    <Route path="/Home" element={<HomePage/>}/>                                       
+                    <Route path="/Gallery" element={<div><Header/><Gallery/></div>}/>
+                    <Route path="/Contact" element={<div><Header/><Contact/></div>}/>         
                 </Routes>
                 <Footer/>
             </Router>
-            
         </StyledEngineProvider>
         </ThemeProvider>
     );
