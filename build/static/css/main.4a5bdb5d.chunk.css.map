@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/css/navbar.css"],"names":[],"mappings":"AAAA,QACI,cACJ,CAOA,qBACI,SAAS,CACT,wBACJ","file":"main.4a5bdb5d.chunk.css","sourcesContent":[".appbar{\n    background: red;\n}\n\n.button{\n    color: red;\n    background-color: aliceblue;\n}\n\n#menu-appbar{\n    color:red;\n    background-color: aliceblue;\n}"]}
