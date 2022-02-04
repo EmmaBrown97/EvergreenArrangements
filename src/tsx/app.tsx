@@ -18,7 +18,6 @@ function App() {
         <ThemeProvider theme={evergreenTheme}>
         <CssBaseline/>
         <StyledEngineProvider injectFirst>
-            
             <Router>
             <NavBar/>
                 <Routes>

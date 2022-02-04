@@ -105,11 +105,21 @@ function Footer(props) {
                             </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} alignItems="flex-end">
-                            <Stack direction="row" justifyContent={isSmUp ? "end" : "center"}>
-                            <img src={LogoImage} width="100" height="100" ></img>
-                            </Stack>
-                                
+
+                        <VizSensor
+                                    onChange={(isVisible) => {
+                                        setActive(isVisible);
+                                    }}
+                                >
+                                    <Fade in={active} timeout={3000}>
+                                        
+                                    <Stack direction="row" justifyContent={isSmUp ? "end" : "center"}>
+                                    <img src={LogoImage} width="100" height="100" ></img>
+                                    </Stack>
+                                    </Fade>
                             
+                                
+                           </VizSensor>
                         </Grid>
                       
                     </Grid>

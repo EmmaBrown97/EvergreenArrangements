@@ -3,7 +3,7 @@ import { createTheme } from '@material-ui/core/styles';
 const evergreenTheme = createTheme({
     
 
-    
+
     palette: {
         primary: {
             main: "#2B3E40"
@@ -31,7 +31,7 @@ const evergreenTheme = createTheme({
         color: 'red'
     },
     spacing: 4,
-
+    
 })
 
 export default evergreenTheme;
