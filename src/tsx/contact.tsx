@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   
 function Contact() {
     const classes = useStyles();
-    function sendEmail(e) {
+    function sendEmail(e: any) {
         e.preventDefault();
 
     emailjs.sendForm('service_1divvnb', 'template_e2bbimm', e.target, 'user_OttdSPNzVKUCOj9rHl4Kv')
