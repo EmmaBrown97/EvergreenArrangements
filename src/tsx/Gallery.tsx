@@ -11,7 +11,7 @@ import { useState } from 'react';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import Typography from '@mui/material/Typography';
 
-function useIsWidthUp(breakpoint) {
+function useIsWidthUp(breakpoint: any) {
   const theme = useTheme();
   return useMediaQuery(theme.breakpoints.up(breakpoint));
 }

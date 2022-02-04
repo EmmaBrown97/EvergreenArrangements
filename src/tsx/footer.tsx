@@ -23,12 +23,12 @@ import LogoImage from './../images/circle_logo_cropped.png'
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 
-function useIsWidthUp(breakpoint) {
+function useIsWidthUp(breakpoint: any) {
     const theme = useTheme();
     return useMediaQuery(theme.breakpoints.up(breakpoint));
   }
 
-function Footer(props) {
+function Footer(props: any) {
 
     const isSmUp = useIsWidthUp("sm");
     let [active, setActive] = useState(false);
