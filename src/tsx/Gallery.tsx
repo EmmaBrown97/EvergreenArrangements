@@ -16,7 +16,7 @@ function useIsWidthUp(breakpoint: any) {
   return useMediaQuery(theme.breakpoints.up(breakpoint));
 }
 
-function Gallery(props) {
+function Gallery(props: any) {
 
   const isSmUp = useIsWidthUp("sm");
   let [active, setActive] = useState(false);
